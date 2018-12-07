@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .container
+    .py-5.text-center
+      h2 Nieuwsbrief registratie
+      p.lead Enkel zichtbaar voor administrators. Hier kan de administrator nieuwe mailadressen in de lijst zetten.
+  .container
+    form.needs-validation(method='post', action='/nieuwsbrief/registratie')
+      .mb-3
+        label(for='email')
+          | E-mailadres
+        input#email.form-control(name='email', type='email', placeholder='you@example.com', required='true')
+        .invalid-feedback
+          | Vul een geldig e-mail adres in.
+      hr.mb-4
+      button.btn.btn-primary.btn-lg.btn-block(type='submit') Registreer
+      hr.mb-4

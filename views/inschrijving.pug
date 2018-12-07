@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  .container
+    .py-5.text-center
+      h2 Inschijving: #{inschrijving.voornaamKind} #{inschrijving.achternaamKind}
+  .container
+    hr.mb-4
+    p.lead.font-weight-bold Informatie Kind:
+    .row
+      .col
+        p.lead Naam: #{inschrijving.voornaamKind} #{inschrijving.achternaamKind}
+    .row
+      .col
+        p.lead Leeftijd: #{inschrijving.leeftijdKind}
+    .row
+      .col
+        p.lead Extra:  #{inschrijving.extra}
+    hr.mb-4
+    p.lead.font-weight-bold Informatie Voogd:
+    .row
+      .col
+        p.lead Naam: #{inschrijving.voornaamVoogd} #{inschrijving.achternaamVoogd}
+    .row
+      .col
+        p.lead Gsm: #{inschrijving.gsmVoogd}
+    .row
+      .col
+        p.lead E-mail: #{inschrijving.emailVoogd}
+    hr.mb-4
+    .row
+      .col-md.mb-2
+        a.btn.btn-primary.btn-block.btn-lg(href='/inschrijvingen/aanpassen/'+inschrijving._id, role='button') Aanpassen
+      .col-md.mb-2
+        form(method='post', action='/inschrijvingen/'+inschrijving._id)
+          input(type='hidden', name='delete')
+          button.btn.btn-danger.btn-block.btn-lg(role='submit') Verwijderen
+    hr.mb-4
+  .container
+    a.btn.btn-outline-primary.btn-block.btn-lg(href='/inschrijvingen', role='button') Terug naar lijst  
+    hr.mb-4
+    br

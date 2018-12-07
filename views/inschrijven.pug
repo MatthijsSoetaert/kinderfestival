@@ -1,0 +1,76 @@
+extends layout
+
+block content
+  .container
+    .py-5.text-center
+      h2 Inschrijvingsformulier
+      p.lead
+        | Ben je klaar om in te schrijven? Vul dan nu het onderstaande formulier in.
+  .container
+    form.needs-validation(method='post', action='/inschrijven')
+      h4.mb-3 Informatie Kind
+      .row
+        .col-md-5.mb-3
+          label(for='voornaamKind')
+            |Voornaam
+          input#voornaamKind.form-control(name='voornaamKind', type='text', placeholder='voornaam', value='', required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+        .col-md-7.mb-3
+          label(for='achternaamKind')
+            |Achternaam
+          input#achternaamKind.form-control(name='achternaamKind', type='text', placeholder='achternaam', value='', required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+      .mb-3
+        label(for='leeftijdKind')
+          | Leeftijd
+        input#leeftijdKind.form-control(name='leeftijdKind', type='text', placeholder='leeftijd', value='', required='true')
+        .invalid-feedback
+            | Vul een geldige leeftijd in.	
+      .mb-3
+        label(for='extra')
+          | Extra informatie
+          span.text-muted (Optioneel)
+        textarea#extra.form-control(name='extra', type='text', placeholder='Allergieën, ...')
+      hr.my-4
+      h4.mb-3 Informatie Voogd
+      .row
+        .col-md-5.mb-3
+          label(for='voornaamVoogd')
+            |Voornaam
+          input#voornaamVoogd.form-control(name='voornaamVoogd', type='text', placeholder='voornaam', value='', required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+        .col-md-7.mb-3
+          label(for='achternaamVoogd')
+            |Achternaam
+          input#achternaamVoogd.form-control(name='achternaamVoogd', type='text', placeholder='achternaam', value='', required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+      .mb-3
+        label(for='gsmVoogd')
+          | GSM-nummer
+        input#gsmVoogd.form-control(name='gsmVoogd', type='text', placeholder='0477121212', required='true')
+        .invalid-feedback
+          | Vul een geldig GSM-nummer in. 
+        small#GSMHelp.form-text.text-muted Dit GSM-nummer wordt niet gedeeld en wordt enkel gebruikt in een noodgeval.		  
+      .mb-3
+        label(for='emailVoogd')
+          | E-mailadres
+        input#emailVoogd.form-control(name='emailVoogd', type='email', placeholder='you@example.com', required='true')
+        .invalid-feedback
+          | Vul een geldig e-mail adres in.
+        small#emailHelp.form-text.text-muted Dit e-mailadres wordt niet gedeeld en wordt enkel gebruikt om u op de hoogte te brengen van eventuele wijzigingen.
+      .mb-3  
+        | Wilt u zich inschrijven voor de nieuwsbrief?   
+        input#nieuwsbrief.form-check-input-inline(name='nieuwsbrief', type='checkbox', value='true')
+        label.form-check-label(for='nieuwsbrief')
+        small#nieuwsHelp.form-text.text-muted (Optioneel)
+      hr.mb-4
+      button.btn.btn-primary.btn-lg.btn-block(type='submit') Inschrijven
+      br
+      br
+
+
+    

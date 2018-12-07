@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .container
+    .py-5.text-center
+      h2 Administratoren
+      p.lead Nooit alle administrators verwijderen!
+  .container
+    hr.mb-4
+    a.btn.btn-primary.btn-block.btn-lg(href='/administrator/registratie', role='button') Nieuwe administrator registreren
+    hr.mb-4
+  .container
+    p.lead Administrators:
+    .list-group
+      each administrator in administrators_list
+        a.list-group-item.list-group-item-action(onclick="administratorVerwijderen(this.innerHTML)", data-toggle="modal",data-target="#modal1")
+          | Gebruikersnaam: #{administrator.gebruikersnaam} --> id: #{administrator.id}
+        .modal.fade(role="dialog", id="modal1", tabindex="-1",aria-labelledby="exampleLabel", aria-hidden="true")
+          .modal-dialog(role="document")
+            .modal-content
+              .modal-header 
+                h5.modal-title Verwijderen
+                a.close(type="button" , data-dismiss="modal", aria-label="Close")
+                  span(aria-hidden="true") &times;
+              .modal-body
+                p Ben je zeker dat je deze administrator wil verwijderen?
+              .modal-footer
+                a.btn.btn-error(role="button", data-dismiss="modal" ) Cancel
+                a.btn.btn-danger.verwijderKnop(role="button", href='') Verwijderen
+    hr.mb-4
+  .container
+    a.btn.btn-outline-primary.btn-block.btn-lg(href='/administrator/beheer', role='button') Naar beheerpagina 
+    hr.mb-4
+    br
+    

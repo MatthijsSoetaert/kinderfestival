@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  .container
+    .py-5.text-center
+      h2 Inschrijving aanpassen
+      p.lead Hier kunnen we een bestaande inschrijving aanpassen.
+  .container
+    form.needs-validation(method='post', action='/inschrijvingen/aanpassen/'+inschrijving._id)
+      h4.mb-3 Informatie Kind
+      .row
+        .col-md-5.mb-3
+          label(for='voornaamKind')
+            |Voornaam
+          input#voornaamKind.form-control(name='voornaamKind', type='text', placeholder='voornaam', value=inschrijving.voornaamKind, required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+        .col-md-7.mb-3
+          label(for='achternaamKind')
+            |Achternaam
+          input#achternaamKind.form-control(name='achternaamKind', type='text', placeholder='achternaam', value=inschrijving.achternaamKind, required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+      .mb-3
+        label(for='leeftijdKind')
+          | Leeftijd
+        input#leeftijdKind.form-control(name='leeftijdKind', type='text', placeholder='leeftijd', value=inschrijving.leeftijdKind, required='true')
+        .invalid-feedback
+            | Vul een geldige leeftijd in.	
+      .mb-3
+        label(for='extra')
+          | Extra informatie
+          span.text-muted (Optioneel)
+        input#extra.form-control(name='extra', type='text', placeholder='Allergieën, ...', value=inschrijving.extra)
+      hr.my-4
+      h4.mb-3 Informatie Voogd
+      .row
+        .col-md-5.mb-3
+          label(for='voornaamVoogd')
+            |Voornaam
+          input#voornaamVoogd.form-control(name='voornaamVoogd', type='text', placeholder='voornaam', value=inschrijving.voornaamVoogd, required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+        .col-md-7.mb-3
+          label(for='achternaamVoogd')
+            |Achternaam
+          input#achternaamVoogd.form-control(name='achternaamVoogd', type='text', placeholder='achternaam', value=inschrijving.achternaamVoogd, required='true')
+          .invalid-feedback
+            | Vul een geldige naam in.
+      .mb-3
+        label(for='gsmVoogd')
+          | GSM-nummer
+        input#gsmVoogd.form-control(name='gsmVoogd', type='text', placeholder='0477121212', required='true', value=inschrijving.gsmVoogd)
+        .invalid-feedback
+          | Vul een geldig GSM-nummer in. 		  
+      .mb-3
+        label(for='emailVoogd')
+          | E-mailadres
+        input#emailVoogd.form-control(name='emailVoogd', type='email', placeholder='you@example.com', required='true', value=inschrijving.emailVoogd)
+        .invalid-feedback
+          | Vul een geldig e-mail adres in.
+      hr.mb-4
+      .row
+        .col-md.mb-2
+          button.btn.btn-primary.btn-lg.btn-block(type='submit') Aanpassen
+        .col-md.mb-2
+          a.btn.btn-danger.btn-block.btn-lg(href='/inschrijvingen/'+inschrijving._id, role='button') Annuleren
+      br
+      hr.mb-4

@@ -1,0 +1,186 @@
+/*CUSTUM CSS FILE*/
+
+/* font voor de titel*/
+@font-face {
+    font-family: "AgentOrange";
+    src:url("/public/Fonts/AGENTORANGE.TTF");
+}
+
+.container {
+	margin: auto;
+	width: auto;
+	padding: 0 15px;
+}
+
+.navbar{
+	/*navigatiebalk breder maken*/
+	padding: .2rem; /*1 rem = 16 pixels*/
+}
+.nav-link{
+	/*navigatiebalk items groter*/
+	font-size: 1.2em;
+	/*navigatiebalk items verder uit elkaar*/
+	padding-left: 20px !important; /*important zorgt voor overschrijven padding container*/
+}
+.navbar-dark .navbar-nav .nav-link {
+	color: rgb(255, 255, 255);
+	text-decoration: underline;
+	text-decoration-color: #1A6AC1;
+	transition: text-decoration-color 0.3s ease-in-out;
+}
+
+.navbar-dark:hover .navbar-nav:hover .nav-link:hover {
+	text-decoration: underline;
+	color :white;
+}
+.logo{
+	/*Titel groter*/
+	width: 30px;
+}
+
+.navbar-brand{
+	padding-left: 20px;
+}
+
+/* horizontale lijnen footer*/ 
+hr.light{
+	border-top: 1px solid #d5d5d5;
+	width: 75%;
+	margin-top: .4rem;
+	margin-bottom: .4rem;
+}
+/* laatse rule*/
+hr.light-100{
+	border-top: 1px solid #d5d5d5;
+	width: 100%;
+	margin-top: .8rem;
+	margin-bottom: 1rem;
+}
+
+/* CONTACT */
+#wrapper {
+    width: 100%;
+    overflow: hidden; /* add this to contain floated children */
+}
+#linker-contact-kolom {
+	float:left; /* add this */
+	text-align: left;
+}
+#rechter-contact-kolom {
+	float: left; /* add this */
+	
+}
+
+.facebookIcoon{
+	height: 15px;
+	width: 15px;
+}
+/*INDEX*/
+
+#titel_feestopdeberg{
+	font-family: AgentOrange;
+	font-size: 50px;
+	color:#1a6ac1;
+}
+
+h3{
+	color:#1a6ac1;
+
+}
+#img_wat_is_het{
+	height: 100%;
+	width: 100%;
+	transform: scaleX(-1);
+}
+#img_wie_zijn_wij{
+	height: 100%;
+	width:100%;
+}
+
+#img_wie_komt_er{
+	height: 100%;
+	width: 100%;
+}
+
+#rechter_wie_komt_er{
+	padding-left: 20px;
+	text-align: left;
+}
+
+#linker_wat_kan_je_doen{
+	padding-right: 20px;
+	text-align: left;
+}
+/* Google maps layout*/
+#map{
+    height:400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+}
+
+html{
+	font-family: 'Quicksand', sans-serif;
+	position: relative;
+	min-height: 100%;
+}
+
+body{
+	padding-top:50px;
+}
+.footer.bg-dark{
+	padding-bottom: 10px;
+	padding-top:10px;
+	width: 100%;
+	position: absolute;
+}
+.footer{
+	color: #d5d5d5;
+	bottom: 0;
+	width: 100%;
+
+}
+
+.col-lg-6#linker_wie_zijn_wij.linkerIndex{
+	text-align: left;
+}
+
+.col-lg-6#linker_wie_komt_er.linkerIndex{
+	text-align: left;
+}
+.row#wie_komt_er.indexWrapper{
+	text-align: left;
+}
+
+/* inschrijven pagina */
+.btn-primary{
+	color: white;
+	background-color: #1A6AC1;
+	border-color: #1A6AC1;
+}
+
+/* inloggen pagina */
+.btn-outline-primary {
+    color: #1A6AC1;
+    background-color: transparent;
+    background-image: none;
+    border-color: #1A6AC1;
+}
+
+
+/* AANPASSINGEN BIJ VERANDEREN SCHERMGROOTTE*/
+@media (max-width: 992px){
+	body{
+		padding-bottom: 20px;
+	}
+}
+@media (max-width: 786px){
+	body{
+		padding-bottom: 20px;
+	}
+}
+@media (max-width: 576px){
+	body{
+		padding-bottom: 60px;
+	}
+}
+
+

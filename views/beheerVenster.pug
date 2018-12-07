@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    .container
+        .py-5.text-center
+            h2 Beheerders venster
+            p.lead Kies welke actie je wilt uitvoeren
+    .container
+        .row
+            .col-lg
+                .card
+                    h5.card-header Administrators
+                    .card-body
+                        p.card-text Toont de lijst met administratoren van deze pagina
+                        a.btn.btn-outline-primary(href="/administrators") administrators
+                p 
+            .col-lg
+                .card
+                    h5.card-header Inschrijvingen
+                    .card-body
+                        p.card-text Toont de lijst met Inschrijvingen voor het festival
+                        a.btn.btn-outline-primary(href='/inschrijvingen') inschrijvingen
+                        a.btn.btn-outline-primary(onclick="aantalInschrijvingenTonen(innerHTML)", data-toggle="modal",data-target="#modal2" ) aantal
+                p
+            .col-lg
+                .card
+                    h5.card-header Nieuwsbrieven
+                    .card-body
+                        p.card-text Toont de lijst met personen die geabonneerd zijn op de nieuwsbrief
+                        a.btn.btn-outline-primary(href="/nieuwsbrieven") nieuwsbrieven
+                p
+            .modal.fade(role="dialog", id="modal2", tabindex="-1",aria-labelledby="exampleLabel", aria-hidden="true")
+                .modal-dialog(role="document")
+                    .modal-content
+                        .modal-header 
+                            h5.modal-title Aantallen
+                            a.close(type="button" , data-dismiss="modal", aria-label="Close")
+                            span(aria-hidden="true") &times;
+                        #aantalInschrijvingenBody.modal-body
+                            p 
+                        .modal-footer
+                            a.btn.btn-error(role="button", data-dismiss="modal" ) Ok
+
+  
+
+
+

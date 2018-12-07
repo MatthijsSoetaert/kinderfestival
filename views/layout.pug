@@ -1,0 +1,85 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial scale=1.0, shrink-to-fit=no')
+    //scripts
+    script(src='/public/js/GoogleMaps.js')
+    //google fonts
+    link(href="https://fonts.googleapis.com/css?family=Cantarell|Poiret+One|Quicksand|Rajdhani" rel="stylesheet")
+    title Kinderfestival
+    //BOOTSTRAP STYLESHEET
+    link(rel='stylesheet' href='/bootstrapcss/bootstrap.css')
+    //COSTUM STYLESHEET
+    link(href='/public/stylesheets/style.css', rel='stylesheet')
+    //Jquery
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    //Modal script
+    script(type="text/javascript" src='../public/js/inschrijvingenModal.js')
+
+
+  body
+    //NAVIGATIEBALK
+    header
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+        a.navbar-brand(href='/')
+          img.logo(src='/public/img/logo.png')
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href='/')
+                | Home 
+              span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/praktisch')
+                | Praktisch 
+              span.sr-only
+            li.nav-item
+              a.nav-link(href='/locatie')
+                | Locatie 
+              span.sr-only
+            li.nav-item
+              a.nav-link(href='/inschrijven')
+                | Inschrijven
+              span.sr-only
+          ul.navbar-nav.ml-auto
+            //- INDIEN INGELOGD
+            if user
+              li.nav-item.dropdown
+                a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  | Beheer
+                .dropdown-menu(aria-labelledby='navbarDropdown').dropdown-menu-right
+                  a.dropdown-item(href="/administrator/beheer") Overzicht
+                  a.dropdown-item(href='/administrators') Administrators
+                  a.dropdown-item(href='/inschrijvingen') Inschrijvingen
+                  a.dropdown-item(href='/nieuwsbrieven') Nieuwsbrief
+              li.nav-item
+                a.nav-link(href='/uitloggen')
+                  | Uitloggen
+            //- INDIEN NIET INGELOGD
+            else 
+              li.nav-item
+                a.nav-link(href='/inloggen')
+                  | Inloggen
+    //MAIN CONTENT
+    div
+      block content	
+    //FOOTER
+    p
+    .footer.bg-dark
+      .container-fluid.padding
+        center
+            speelpleindespeelbergvzw Adres: Tomberg 21a 8791 Beveren-Leie e-mail: info@despeelberg.be verantwoordelijke: Margot Soetaert 0490/031652
+  
+
+  //SCRIPTS
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+  script.
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\\/script>')
+  script(src='/popperjs/popper.min.js')
+  script(src='/bootstrapjs/bootstrap.min.js')
+  script(scr='/public/js/javascript.js')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCLUQimTy13xZcrVR4o_dJHk_TKUMG8qwY&callback=initMap')

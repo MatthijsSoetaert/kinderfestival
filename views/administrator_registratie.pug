@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    .py-5.text-center
+      h2 Registratiepagina
+      p.lead Hier kan de administrator nieuwe administrators aanmaken.
+  .container
+    form.needs-validation(method='post', action='/administrator/registratie')
+      .mb-3
+        label(for='gebruikersnaam')
+          | Gebruikersnaam
+        input#gebruikersnaam.form-control(name='gebruikersnaam', type='text', placeholder='gebruikersnaam', required='true')
+        .invalid-feedback
+          | Vul een geldige gebruikersnaam in. 
+      .mb-3
+        label(for='paswoord')
+          | Paswoord
+        input#paswoord.form-control(name='paswoord', type='password', placeholder='paswoord', required='true')
+        .invalid-feedback
+          | Vul een geldig paswoord in.
+      hr.mb-4
+      button.btn.btn-primary.btn-lg.btn-block(type='submit') Registreer
+      hr.mb-4
