@@ -6,10 +6,18 @@
     src:url("/public/Fonts/AGENTORANGE.TTF");
 }
 
+nav.navbar-expand-lg.navbar.navbar-dark.bg-dark.fixed-top{
+	background-color: #1A6AC1 !important;
+	color: #1A6AC1;
+}
 .container {
 	margin: auto;
 	width: auto;
 	padding: 0 15px;
+}
+
+.bg-dark{
+	background-color: #1A6AC1;
 }
 
 .navbar{
@@ -131,6 +139,7 @@ body{
 	padding-top:10px;
 	width: 100%;
 	position: absolute;
+	background-color: #1A6AC1 !important;
 }
 .footer{
 	color: #d5d5d5;
