@@ -35,7 +35,7 @@ var nieuwsbriefRouter = require('./routes/nieuwsbrief');
 
 //Set up mongoose connection inschrijving
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://matthijs:matthijs1@ds119374.mlab.com:19374/kinderfestival';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://dbUser:dbPassword0@ds119374.mlab.com:19374/kinderfestival';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
